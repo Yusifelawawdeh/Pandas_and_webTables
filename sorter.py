@@ -8,10 +8,14 @@ def rangeDir(dir):
 	fileNames = natsort.natsorted(os.listdir(dir))
 	file_count = 0
 
-	for file in range(fileNames.index(fileNames[0]), fileNames.index(fileNames[2003]), 5):
+	for file in range(fileNames.index(fileNames[0]), fileNames.index(fileNames[2000]), 5):
 		file_count += 1
 		print('File Name: ' + str(file_count))
+
 		print('removed : ' + fileNames[file])
+
+		os.remove(frames_dir + '\\' + fileNames[file])
+
 		if file_count == 375:
 			print("hit the end !!")
 			break
